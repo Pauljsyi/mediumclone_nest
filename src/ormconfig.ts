@@ -1,12 +1,12 @@
-import { DataSource } from 'typeorm';
+import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
-const config = new DataSource({
+const config: PostgresConnectionOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
   username: 'mediumclone',
   password: '123',
   database: 'mediumclone',
-});
+};
 
 export default config;
