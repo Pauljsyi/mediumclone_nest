@@ -4,11 +4,12 @@ const config: PostgresConnectionOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
-  username: 'mediumclone',
-  password: '123',
+  username: 'postgres',
+  password: 'postgres1',
   database: 'mediumclone',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
-  synchronize: true,
+  synchronize: false,
+  migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
 };
 
 export default config;
