@@ -38,7 +38,9 @@ export class UserService {
       where: {
         email: loginUserDto.email,
       },
+      select: ['id', 'username', 'email', 'bio', 'image', 'password'],
     });
+    console.log(user);
     // check user firsts
     if (!user) {
       throw new HttpException(
@@ -58,7 +60,7 @@ export class UserService {
         HttpStatus.UNPROCESSABLE_ENTITY,
       );
     }
-
+    delete user.password;
     return user;
   }
 
